@@ -18,6 +18,10 @@ body {
   background-color: #f7f7f7;
 }
 
+.navbar {
+  margin-bottom: 0px !important;
+}
+
 .btn, .btn:active, .btn-primary:active, .btn-default:active, .btn.active, .btn:focus, .btn:hover {
   background-color: #00b22d;
   background: -webkit-linear-gradient(#9370DB, #BA55D3);
@@ -92,10 +96,12 @@ select {
 }
 
 .hero-heading {
-  color: #fff;
+  // color: #fff;
+  color: #ffffff;
   margin-top: 100px;
   font-size: 37px;
   font-weight: 600;
+  -webkit-text-stroke: 1px #dda0dd;
 }
 
 .hero-heading p {
@@ -127,3 +133,4 @@ select {
   padding: 0px 10px;
   font-size: 19px;
 }
+
