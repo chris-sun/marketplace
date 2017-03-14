@@ -4,6 +4,7 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @service = Service.find(params[:id])
   end
 
   def new
@@ -11,11 +12,25 @@ class ServicesController < ApplicationController
   end
 
   def create
+    @service = Service.new(service_params)
+
+    if @service.save
+      redirect_to @service
+    else
+      # previous @service object is passed to template so errors can appear on the form
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
+  end
+
+  private
+
+  def service_params
+    params.require(:service).permit(:title, :description, :price, :requirements)
   end
 end

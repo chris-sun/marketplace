@@ -4,5 +4,5 @@ class Service < ActiveRecord::Base
   validates :price, presence: true
   validates :delivery_time, presence: false
   validates :revisions, presence: false
-  validates :requirements, presence: true, length: { maximum: 80 }
+  validates :requirements, presence: true, length: { maximum: 250 }
 end

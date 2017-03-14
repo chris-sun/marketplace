@@ -5,10 +5,12 @@
     </div>
     <div class="panel-body">
       <%= form_for @service do |f| %>
+
         <% if @service.errors.any? %> 
           <div class="alert alert-info">
             <h3>
-              Fix the following <%= pluralize(@service.errors.count, "error") %> before continuing: 
+              Fix the following <%= pluralize(@service.errors.count, "error") %>
+              before continuing: 
             </h3>
             <ul>
               <% @service.errors.full_messages.each do |msg| %>
