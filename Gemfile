@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Authentication
 gem 'devise'
+# use Omniauth for Facebook authentication
+gem 'omniauth'
+gem 'omniauth-facebook', '3.0.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
