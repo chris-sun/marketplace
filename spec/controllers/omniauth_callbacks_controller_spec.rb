@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe OmniauthCallbackController, type: :controller do
+RSpec.describe OmniauthCallbacksController, type: :controller do
 
   describe "GET #facebook" do
     it "returns http success" do
