@@ -43,3 +43,6 @@ bower.json
 
 # tags file used by ctags
 tags
+
+# Ignore application configuration
+/config/application.yml
