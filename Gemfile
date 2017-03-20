@@ -30,8 +30,8 @@ gem 'omniauth-facebook', '3.0.0'
 # Figaro for app configuration
 gem 'figaro'
 
-# Heroku requirement
-gem 'rails_12factor'
+# Heroku requirements
+gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -51,8 +51,8 @@ group :development, :test do
   gem 'ffaker'
   gem 'shoulda-matchers'
   gem 'quiet_assets'
-  # Use mysql as the database for Active Record
-  gem 'mysql2', '>= 0.3.13', '< 0.5'
+  # # Use mysql as the database for Active Record
+  # gem 'mysql2', '>= 0.3.13', '< 0.5'
 end
 
 group :development do
@@ -64,7 +64,8 @@ group :development do
 end
 
 group :production, :staging do
-  gem 'pg'
   gem 'rmagick'
+  # Heroku requirement
+  gem 'rails_12factor'
 end
 
