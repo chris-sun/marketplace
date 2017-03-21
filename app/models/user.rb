@@ -21,7 +21,9 @@ class User < ActiveRecord::Base
     User.where(provider: auth.provider, uid: auth.uid).first_or_create do |u|
       u.provider = auth.provider
       u.uid = auth.uid
-      u.fullname = auth.info.name
+      fb_name = auth.info.name
+      u.firstname = fb_name.split.first
+      u.lastname = fb_name.split.last
       u.description = auth.info.description
       u.email = auth.info.email
       u.image = auth.info.image
