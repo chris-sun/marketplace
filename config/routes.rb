@@ -7,8 +7,8 @@ Rails.application.routes.draw do
                :sign_out => 'logout',
                :edit => 'profile'},
              :controllers => {
-               :omniauth_callbacks => 'omniauth_callbacks',
-               :registrations => 'registrations'
+               :omniauth_callbacks => 'omniauth_callbacks'
+               
              }
 
   root 'pages#home'
