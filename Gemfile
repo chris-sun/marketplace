@@ -29,6 +29,8 @@ gem 'omniauth'
 gem 'omniauth-facebook', '3.0.0'
 # Figaro for app configuration
 gem 'figaro'
+# For photo uploads
+gem 'paperclip'
 
 # Heroku requirements
 gem 'pg'
