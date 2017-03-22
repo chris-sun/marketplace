@@ -1,27 +1,25 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
+<div class="row">
+  <div class="col-md-8">
 
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          <h3 class="panel-titlex"><%= @service.title %></h3>
-        </div>
-        <div class="panel-body">
-          <center>
-            <%= image_tag(@service.image.url, :class => "img-responsive") %>
-          </center>
-        </div>
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3 class="panel-titlex"><%= @service.title %></h3>
       </div>
-
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          <h3 class="x">About This Gig</h3>
-        </div>
-        <div class="panel-body">
-          <p><%= @service.description %></p>
-        </div>
+      <div class="panel-body">
+        <center>
+          <%= image_tag(@service.image.url, :class => "img-responsive") %>
+        </center>
       </div>
-
     </div>
+
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3 class="x">About This Gig</h3>
+      </div>
+      <div class="panel-body">
+        <p><%= @service.description %></p>
+      </div>
+    </div>
+
   </div>
 </div>

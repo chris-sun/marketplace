@@ -96,6 +96,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    metamagic (3.1.7)
+      rails (>= 3.0.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -239,6 +241,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  metamagic
   omniauth
   omniauth-facebook (= 3.0.0)
   paperclip
