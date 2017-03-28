@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable
 
   has_many :services
+  has_many :orders
 
   validates :firstname, presence: true, length: { maximum: 50 }
   validates :lastname, presence: true, length: { maximum: 50 }

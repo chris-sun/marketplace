@@ -12,7 +12,20 @@ Rails.application.routes.draw do
              }
 
   root 'pages#home'
-  resources :services
+
+  resources :services do
+    resources :orders, only: [:create]
+  end
+
+  resources :orders, only: [:show]
+
+  # These are hacks.  Should use a nested resource
+  # resources :users do
+  #   member 'orders'
+  # end
+  get '/user_orders'=> 'orders#user_orders'
+  get '/user_sales'=> 'orders#user_sales'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
