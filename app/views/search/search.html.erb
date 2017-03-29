@@ -1,20 +1,16 @@
-<div class="hero">
-  <div class="container">
-    <div class="row">
-      <div class="hero-heading">
-        What do you need done? <br/>
-        Find it on Sixerr.
-        <p>Browse. Buy. Done. </p>
-      </div>
-    </div>
-    <%= render 'search/form' %>
-
-  </div>
-</div>
 <div class="container section">
-  <h1>
-    Newest Gigs
-  </h1>
+
+  <h1>Services Search</h1>
+  <%= render 'search/form' %>
+  <br><br>
+  <div class="row">
+    <% if @services.blank? %>
+      <center>
+        <h4>No services found matching <%= params[:q] %>.</h4>
+      </center>
+    <% end %>
+  </div>
+
   <div class="row">
     <% @services.each do |service| %>
       <div class="col-md-3">
@@ -31,7 +27,7 @@
         <% end %>
       </div>
     <% end %>
-
   </div>
+
 </div>
 
