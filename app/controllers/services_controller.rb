@@ -7,10 +7,13 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @is_buyer = Order.where("service_id = ? AND user_id = ?", @service.id, current_user.id).present? if current_user
+
+    @reviews = @service.reviews
+    @reviewed = @reviews.find_by(user_id: current_user.id) if current_user
   end
 
   def new
-    # @service = Service.new
     @service = current_user.services.build
   end
 

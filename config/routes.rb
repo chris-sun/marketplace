@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'pages#home'
 
   devise_for :users,
              :path => '',
@@ -11,10 +12,9 @@ Rails.application.routes.draw do
                
              }
 
-  root 'pages#home'
-
   resources :services do
     resources :orders, only: [:create]
+    resources :reviews, only: [:create, :destroy]
   end
 
   resources :charges

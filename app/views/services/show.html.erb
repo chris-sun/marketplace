@@ -1,30 +1,93 @@
-<div class="row">
-  <div class="col-md-8">
+<%
+meta title: "Sixerr Gig",
+     description: "#{@service.title}",
+     keywords: %w(keyword1 keyword2 keyword3),
+     og: {
+      image: "#{@service.image.url}"
+     }
+%>
 
-    <div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 class="panel-titlex"><%= @service.title %></h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3><%= @service.title %></h3>
+        </div>
+        <div class="panel-body">
+          <center>
+            <%= image_tag(@service.image.url, :class => "img-responsive") %>
+          </center>
+        </div>
       </div>
-      <div class="panel-body">
-        <center>
-          <%= image_tag(@service.image.url, :class => "img-responsive") %>
-        </center>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3>About This Gig</h3>
+        </div>
+        <div class="panel-body">
+          <p><%= @service.description %></p>
+        </div>
+      </div>
+
+      <%= render 'reviews/form' if @is_buyer && !@reviewed %>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3>Reviews</h3>
+        </div>
+        <%= render 'reviews/list' %>
+
       </div>
     </div>
+    <div class="col-md-4">
+      <%= render 'orders/form' %>
 
-    <div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 class="x">About This Gig</h3>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h5 class="pull-left">
+            <%= pluralize(@reviews.count, "Buyer Review") %>
+          </h5>
+
+          <h4 class="pull-right"><%= @service.average_rating %> </h4>
+             <div id="average_rating" class="pull-right img-average-rating-stars"></div>
+             <!-- <%= image_tag('ratings.png', :class => "img-rating-stars") %> -->
+        </div>
       </div>
-      <div class="panel-body">
-        <p><%= @service.description %></p>
+      <center>
+        <div id="share"></div>
+        <!-- <ul class="soc">
+            <li><a class="soc-facebook" href="#"></a></li>
+            <li><a class="soc-twitter" href="#"></a></li>
+            <li><a class="soc-google" href="#"></a></li>
+            <li><a class="soc-linkedin soc-icon-last" href="#"></a></li>
+        </ul> -->
+        <br>
+      </center>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <center>
+              <%= image_tag avatar_url(@service.user), class:"img-circle img-responsive img-seller-avatar" %>
+              <h3><%= @service.user.fullname %></h3>
+          </center>
+        </div>
+        <div class="panel-body">
+          <%= @service.user.description %>
+        </div>
       </div>
     </div>
-
   </div>
-
-  <div class="col-md-4">
-    <%= render 'orders/form' %>
-  </div>
-
 </div>
+
+<script>
+  $('#average_rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= @service.average_rating %>
+  });
+
+  $("#share").jsSocials({
+      showLabel: false,
+      showCount: false,
+      shares: ["facebook", "twitter", "googleplus", "linkedin", "pinterest"]
+   });
+</script>

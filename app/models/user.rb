@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :services
   has_many :orders
+  has_many :reviews
 
   validates :firstname, presence: true, length: { maximum: 50 }
   validates :lastname, presence: true, length: { maximum: 50 }
