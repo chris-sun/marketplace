@@ -3,49 +3,20 @@
     Newest Gigs
   </h1>
   <div class="row">
-    <div class="col-md-3">
-      <div class="gig-card">
-        <%= image_tag 'blog.jpg' %>
-        <h4>
-          I will write 300 words blog posts
-        </h4>
-        <h3>
-          $6
-        </h3>
+    <% @services.each do |service| %>
+      <div class="col-md-3">
+        <%= link_to(service) do %>
+          <div class="gig-card">
+            <center><%= image_tag service.image.url(:small)%></center>
+            <h4>
+              <%= service.title %>
+            </h4>
+            <h3>
+              $<%= service.price %>
+            </h3>
+          </div>
+        <% end %>
       </div>
-    </div>
-    <div class="col-md-3">
-      <div class="gig-card">
-        <%= image_tag 'data.jpg' %>
-        <h4>
-          I will be your virtual assistant for data entry
-        </h4>
-        <h3>
-          $6
-        </h3>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="gig-card">
-        <%= image_tag 'copywrite.jpg' %>
-        <h4>
-          I will copywrite for your website
-        </h4>
-        <h3>
-          $6
-        </h3>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="gig-card">
-        <%= image_tag 'lyrics.jpg' %>
-        <h4>
-          I will create a song for your lyrics
-        </h4>
-        <h3>
-          $6
-        </h3>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>

@@ -20,3 +20,6 @@
               password: password,
               password_confirmation: password)
 end
+
+# Create 10 services
+
