@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:create]
   end
 
+  resources :charges
   resources :orders, only: [:show]
 
   # These are hacks.  Should use a nested resource

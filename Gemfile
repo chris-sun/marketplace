@@ -33,6 +33,8 @@ gem 'figaro'
 gem 'paperclip'
 # For creating meta tags
 gem 'metamagic'
+# Accepting payments
+gem 'stripe'
 
 # Heroku requirements
 gem 'pg'

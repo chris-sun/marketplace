@@ -4,7 +4,24 @@
       <div class="panel-heading">
         <h3>My Sales</h3>
       </div>
+
+      <% if flash[:notice].present? %>
+        <div class="row">
+          <div class="col-md-10">
+            <h2>Purchase completed!  Woo hoo!</h2>
+          </div>
+        </div>
+      <% end %>
+
       <div class="panel-body">
+        <% if flash[:notice].present? %>
+          <div class="row">
+            <div class="col-md-10">
+              <h2>Purchase completed!  Woo hoo!</h2>
+            </div>
+          </div>
+        <% end %>
+
         <% if current_user.orders.length == 0 %>
           <div class="row">
             <div class="col-md-8">
@@ -31,7 +48,7 @@
                   Price: $<%= order.price %></h5>
               </div>
               <div class="col-md-2">
-                <span><%= image_tag get_avatar_url(order.user), class:"navbar-avatar img-circle" %></span>
+                <span><%= image_tag avatar_url(order.user), class:"navbar-avatar img-circle" %></span>
                 <h5><%= order.user.fullname %></h5>
               </div>
               <div class="col-md-2">

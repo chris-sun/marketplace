@@ -1,12 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
-  def create
-    @order = current_user.orders.create(order_params)
-    # FIXME - should change this route later on
-    redirect_to user_orders_path
-  end
-
   def user_orders
     @orders = current_user.orders
   end
