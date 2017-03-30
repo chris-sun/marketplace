@@ -31,6 +31,8 @@ gem 'omniauth-facebook', '3.0.0'
 gem 'figaro'
 # For photo uploads
 gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
+
 # For creating meta tags
 gem 'metamagic'
 # Accepting payments
