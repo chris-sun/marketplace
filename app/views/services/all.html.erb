@@ -15,10 +15,12 @@
           <% @services.each do |service| %>
             <div class="row">
               <div class="col-md-2">
-                <%= image_tag service.image.url(:thumb) %>
+                <a href="<%= service_path(service) %>">
+                  <%= image_tag service.image.url(:thumb) %>
+                </a>
               </div>
               <div class="col-md-7">
-                <h4><%= service.title %></h4>
+                <h4><%= link_to service.title, service_path(service) %></h4>
               </div>
             </div>
             <hr>
