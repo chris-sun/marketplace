@@ -3,9 +3,11 @@ class Service < ActiveRecord::Base
   has_many :orders
   has_many :reviews
 
-  has_attached_file :image, styles: { medium: "300x300",
-                                      small: "230x140",
-                                      thumb: "100x100" }
+  has_attached_file :image, { styles: { medium: "300x300",
+                                        small: "230x140",
+                                        thumb: "100x100" },
+                              preserve_files: true
+                            }
 
   validates :title, presence: true, length: { maximum: 80 }
   validates :description, presence: true, length: { maximum: 1200 } 
