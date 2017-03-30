@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 # use Omniauth for Facebook authentication
 gem 'omniauth'
-gem 'omniauth-facebook', '3.0.0'
+gem 'omniauth-facebook', '4.0.0'
 # Figaro for app configuration
 gem 'figaro'
 # For photo uploads

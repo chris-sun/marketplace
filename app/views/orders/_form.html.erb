@@ -10,7 +10,6 @@
         <% end %>
         </article>
 
-        <script src="https://checkout.stripe.com/checkout.js"></script>
         <%= hidden_field_tag 'stripeToken' %>
         <%= hidden_field_tag 'stripeEmail' %>
         <%= hidden_field_tag 'price', @service.price %>
