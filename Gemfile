@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -41,6 +42,8 @@ gem 'stripe'
 # Heroku requirements
 gem 'pg'
 
+gem 'ffaker'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -56,7 +59,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'ffaker'
   gem 'shoulda-matchers'
   gem 'quiet_assets'
   # # Use mysql as the database for Active Record
