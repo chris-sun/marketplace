@@ -6,6 +6,10 @@ class ServicesController < ApplicationController
     @services = current_user.services
   end
 
+  def all
+    @services = Service.all
+  end
+
   def show
     @is_buyer = Order.where("service_id = ? AND user_id = ?", @service.id, current_user.id).present? if current_user
 

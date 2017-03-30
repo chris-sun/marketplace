@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :services do
     resources :orders, only: [:create]
     resources :reviews, only: [:create, :destroy]
+    collection do
+      get 'all'
+    end
   end
 
   resources :charges
