@@ -1,6 +1,6 @@
 module ApplicationHelper
   def app_name
-    @app_name ||= Rails.application.class.to_s.split(':').first
+    @app_name ||= Figaro.env.APP_NAME
   end
 
   def avatar_url(user, size=150)

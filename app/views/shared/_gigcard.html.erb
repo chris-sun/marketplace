@@ -1,0 +1,15 @@
+<div class="col-md-3">
+  <%= link_to(service) do %>
+    <div class="gig-card">
+      <center>
+        <%= image_tag service.image.url(:small)%>
+        <h4>
+          <%= service.title %>
+        </h4>
+        <h3>
+          $<%= service.price %>
+        </h3>
+      </center>
+    </div>
+  <% end %>
+</div>
